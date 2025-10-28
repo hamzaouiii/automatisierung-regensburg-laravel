@@ -9,6 +9,8 @@
 
         <!-- Scripts -->
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
+        @vite('resources/scss/lib.min.css')
+
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
