@@ -1,7 +1,7 @@
 <template>
   <header :class="['navigation', { scrolled: isScrolled } , {background_white: whiteBg}]">
     <div class="nav-inner">
-      <a class="brand" href="/">
+      <a class="brand" href="#home">
         <img src="/img/logo/logo.png" alt="Logo" />
       </a>
       <div class="nav-bar">      
@@ -39,8 +39,7 @@ let isScrolled = ref(false);
 let whiteBg = ref(false);
 
 const onScroll = () => {
-  console.log( window.scrollY)
-  isScrolled.value = window.scrollY > 160;
+  isScrolled.value = window.scrollY > 260;
   if(window.scrollY < 20){
     isScrolled.value = false;
   }
