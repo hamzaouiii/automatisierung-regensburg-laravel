@@ -1,4 +1,3 @@
-<!-- src/components/Navbar.vue -->
 <template>
   <header :class="['navbar', { scrolled: isScrolled }]">
     <div class="nav-inner">
@@ -6,7 +5,6 @@
         <img src="/img/logo/logo.png" alt="Logo" />
       </a>
 
-      <!-- Mobile toggle -->
       <button
         class="burger"
         :aria-expanded="menuOpen ? 'true' : 'false'"

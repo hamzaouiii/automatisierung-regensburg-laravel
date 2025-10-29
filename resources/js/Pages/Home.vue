@@ -3,14 +3,14 @@
     <Header />
 
     <main>
-      <HeroSection />
+      <!-- <HeroSection />
       <FeatureSection />
       <AboutSection />
       <PricingSection />
-      <ContactSection />
+      <ContactSection /> -->
     </main>
 
-    <Footer />
+    <!-- <Footer /> -->
 </template>
 
 <script setup>
