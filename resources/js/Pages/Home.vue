@@ -1,16 +1,18 @@
 <template>
   <Head title="Automatisierung Regensburg – Digitale Lösungen und Prozessautomatisierung für kleine Unternehmen" />
+  <div>
     <Header />
 
     <main>
-      <!-- <HeroSection />
+      <HeroSection />
       <FeatureSection />
       <AboutSection />
       <PricingSection />
-      <ContactSection /> -->
+      <ContactSection />
     </main>
 
-    <!-- <Footer /> -->
+    <Footer />
+  </div>
 </template>
 
 <script setup>

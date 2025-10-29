@@ -2,32 +2,41 @@
 $bp-md: 768px;
 
 /* ---------- Base / sticky ---------- */
-.navbar {
+.navigation {
   position: fixed;
   top: 0;
   width: 100%;
-  border: 2px solid;
   z-index: 1000;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,.08);
   transition: padding .25s ease, box-shadow .25s ease, background .25s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .nav-inner {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    padding: .75rem 1rem;
-    max-width: 1100px;
+    width: 100%;
     margin-inline: auto;
+    width: 1320px;
+    padding: 25px;
+
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
   }
 
   &.scrolled {
-    background: #f9f9f9;
-    box-shadow: 0 2px 10px rgba(0,0,0,.12);
+  background-color: #fff ;
+ 
+
     .nav-inner { padding: .5rem 1rem; }
   }
 }
-
+.background_white{
+  background-color: #fff ;
+}
 /* ---------- Brand ---------- */
 .brand img {
   display: block;
@@ -44,9 +53,9 @@ $bp-md: 768px;
     color: #333;
     font-weight: 500;
     border-radius: .5rem;
-    transition: background .2s ease, color .2s ease;
+    transition: all .2s ease, color .2s ease;
 
-    &:hover { color: #0d6efd; background: rgba(13,110,253,.06); }
+    &:hover { color: #0d6efd; background: rgba(13,110,253,.03); }
   }
 }
 
@@ -84,15 +93,15 @@ $bp-md: 768px;
   position: absolute;
   inset-inline: 0;
   top: 100%;
-  background: #fff;
-  border-bottom: 1px solid rgba(0,0,0,.06);
-  box-shadow: 0 8px 20px rgba(0,0,0,.06);
   overflow: hidden;
 
   /* slide-down effect via max-height */
   max-height: 0;
   transition: max-height .25s ease;
-  &.is-open { max-height: 320px; } /* enough for all links */
+  &.is-open { max-height: 320px; 
+  background: #fff;
+
+   } /* enough for all links */
 
   /* stack links vertically on mobile */
   display: grid;
@@ -100,6 +109,9 @@ $bp-md: 768px;
 
 /* ---------- Desktop ≥ $bp-md ---------- */
 @media (min-width: $bp-md) {
+  .navbar{
+    padding: 0 !important;
+  }
   .burger { display: none; }
 
   .nav-links {

@@ -1,6 +1,6 @@
 @use 'navbar';
 @use 'fonts' as *;
-
+@use 'hero';
 
 *{
   margin: 0;
@@ -11,6 +11,7 @@
 
 body {
   font-family: 'Fira Sans', 'Heebo', sans-serif;
+  overflow-x: hidden;
 }
 
 .single-pricing ul li {

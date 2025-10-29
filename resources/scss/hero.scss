@@ -1,0 +1,16 @@
+@use 'variables' as *;
+.hero {
+  margin-top: -150px;
+  @media (max-width: $bp-md) {
+    margin-top: 0px;
+  }
+}
+
+.align-self-end > img:nth-child(1){
+  width: 100%;
+}
+
+.hero-section{
+  background-image: url('/img/hero/hero-5/hero-bg.svg');
+  height: 100vh;
+}
