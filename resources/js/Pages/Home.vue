@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <Head title="Automatisierung Regensburg – Digitale Lösungen und Prozessautomatisierung für kleine Unternehmen" />
     <Header />
 
     <main>
@@ -11,7 +11,6 @@
     </main>
 
     <Footer />
-  </div>
 </template>
 
 <script setup>
@@ -22,4 +21,6 @@ import AboutSection from '@/Components/AboutSection.vue'
 import PricingSection from '@/Components/PricingSection.vue'
 import ContactSection from '@/Components/ContactSection.vue'
 import Footer from '@/Components/Footer.vue'
+
+import { Head } from '@inertiajs/vue3'
 </script>

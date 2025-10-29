@@ -1,4 +1,17 @@
+@use 'navbar';
+@use 'fonts' as *;
 
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Fira Sans', 'Heebo', sans-serif;
+}
 
 .single-pricing ul li {
   list-style: none;
@@ -96,3 +109,5 @@ max-width: 600px;
     margin-bottom: 20px;
   }
 }
+
+

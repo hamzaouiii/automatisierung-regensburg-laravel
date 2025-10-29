@@ -1,50 +1,51 @@
+<!-- src/components/Navbar.vue -->
 <template>
-        <header class="header header-6">
-        <div class="navbar-area">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-12">
-                <nav class="navbar navbar-expand-lg">
-             <a class="navbar-brand" href="index.html">
-                    <img src="img/logo/logo.png" alt="Logo" />
-                  </a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent6" aria-controls="navbarSupportedContent6" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                  </button>
-  
-                  <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
-                    <ul id="nav6" class="navbar-nav ms-auto">
-                      <!-- <li class="nav-item">
-                        <a class="page-scroll active" href="#home">Home</a>
-                      </li> -->
-                      <li class="nav-item">
-                        <a class="page-scroll" href="#feature">Leistungen</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="page-scroll" href="#about">Ablauf</a>
-                      </li>
+  <header :class="['navbar', { scrolled: isScrolled }]">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <img src="/img/logo/logo.png" alt="Logo" />
+      </a>
 
-                      <li class="nav-item">
-                        <a class="page-scroll" href="#pricing">Preise</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="page-scroll" href="#contact">Kontakt</a>
-                      </li>
-                    </ul>
-                  </div>
-                  
-                 
-                  <!-- navbar collapse -->
-                </nav>
-                <!-- navbar -->
-              </div>
-            </div>
-            <!-- row -->
-          </div>
-          <!-- container -->
-        </div>
-        <!-- navbar area -->
-      </header>
+      <!-- Mobile toggle -->
+      <button
+        class="burger"
+        :aria-expanded="menuOpen ? 'true' : 'false'"
+        aria-controls="primary-nav"
+        @click="menuOpen = !menuOpen"
+      >
+        <span></span><span></span><span></span>
+        <span class="sr-only">Menü öffnen</span>
+      </button>
+
+      <!-- Links -->
+      <nav
+        id="primary-nav"
+        :class="['nav-links', { 'is-open': menuOpen }]"
+        @click="menuOpen = false"
+      >
+        <a href="#feature">Leistungen</a>
+        <a href="#about">Ablauf</a>
+        <a href="#pricing">Preise</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+    </div>
+  </header>
 </template>
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const menuOpen = ref(false);
+const isScrolled = ref(false);
+
+const onScroll = () => {
+  isScrolled.value = window.scrollY > 8;
+};
+
+onMounted(() => {
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+});
+onUnmounted(() => window.removeEventListener('scroll', onScroll));
+</script>
+
