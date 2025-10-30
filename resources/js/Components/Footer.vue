@@ -6,7 +6,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6">
               <div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
                 <div class="logo">
-                  <a href="#home"> <img src="img/logo/logo.png" alt=""> </a>
+                  <Link href="/"> <img src="img/logo/logo.png" alt=""> </Link>
                 </div>
               </div>
             </div>
@@ -15,8 +15,8 @@
               <div class="footer-widget wow fadeInUp" data-wow-delay=".4s">
                 <h6>Rechtliches</h6>
                 <ul class="links">
-                  <li> <a href="legal\impressum.html">Impressum</a> </li>
-                  <li> <a href="legal\datenschutz.html">Datenschutzerklärung</a> </li>
+                  <li> <Link href="/impressum"  >Impressum</Link> </li>
+                  <li> <Link href="/datenschutz"  >Datenschutzerklärung</Link> </li>
                 </ul>
               </div>
             </div>
@@ -29,3 +29,7 @@
     </footer>
 
 </template>
+
+<script setup>
+import { Link } from '@inertiajs/vue3';
+</script>
