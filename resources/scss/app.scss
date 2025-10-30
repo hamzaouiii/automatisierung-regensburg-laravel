@@ -1,17 +1,22 @@
 @use 'navbar';
 @use 'fonts' as *;
 @use 'hero';
+@use 'pricing';
 
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 
 body {
   font-family: 'Fira Sans', 'Heebo', sans-serif;
   overflow-x: hidden;
+}
+.main{
+   background-image: url('/img/hero/hero-5/hero-bg.svg');
+  height: 115vh;
+  width: 100%;
 }
 
 .single-pricing ul li {

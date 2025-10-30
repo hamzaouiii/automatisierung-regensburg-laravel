@@ -1,6 +1,5 @@
 @use 'variables' as *;
 .hero {
-  margin-top: -150px;
   @media (max-width: $bp-md) {
     margin-top: 0px;
   }
@@ -16,5 +15,5 @@
 }
 
 .hero-content-wrapper a{
-margin: 50px;
+  margin: 10px;
 }
