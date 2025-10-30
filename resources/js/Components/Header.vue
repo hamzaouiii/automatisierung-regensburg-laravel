@@ -4,7 +4,7 @@
       <a class="brand" href="#home">
         <img src="/img/logo/logo.png" alt="Logo" />
       </a>
-      <div class="nav-bar">      
+      <div  class="nav-bar">      
         <button
         class="burger"
         :aria-expanded="menuOpen ? 'true' : 'false'"
@@ -15,7 +15,8 @@
         <span class="sr-only">Menü öffnen</span>
       </button>
 
-        <nav
+        <nav 
+        v-if="isHome()"
           id="primary-nav"
           :class="['nav-links', { 'is-open': menuOpen }]"
           @click="openMenu()"
@@ -25,6 +26,15 @@
           <a href="#pricing">Preise</a>
           <a href="#contact">Kontakt</a>
         </nav>
+        <nav v-else
+                 id="primary-nav"
+          :class="['nav-links', { 'is-open': menuOpen }]"
+          @click="openMenu()">
+          <Link href="/#feature">Leistungen</Link>
+          <Link href="/#about">Ablauf</Link>
+          <Link href="/#pricing">Preise</Link>
+          <Link href="/#contact">Kontakt</Link>
+        </nav>
       </div>
 
     </div>
@@ -33,6 +43,9 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
+import { usePage, Link } from '@inertiajs/vue3'
+
+const Currentpage = usePage()
 
 let menuOpen = ref(false);
 let isScrolled = ref(false);
@@ -44,6 +57,15 @@ const onScroll = () => {
     isScrolled.value = false;
   }
 };
+function isHome () {
+  if (Currentpage.url != "/"){
+    return false;
+  }
+  else{
+    return true;
+  }
+}
+console.log(Currentpage.url )
 
 onMounted(() => {
   onScroll();
